@@ -1,3 +1,3 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/Nikolas888/frontend-project-46/workflows/hexlet-check/badge.svg)](https://github.com/Nikolas888/frontend-project-46/actions)
-[![asciicast](https://asciinema.org/a/BUyrS4wgm0gMDyWLBwXXrHLSz.svg)](https://asciinema.org/a/BUyrS4wgm0gMDyWLBwXXrHLSz)
+[![asciicast](https://asciinema.org/a/ouwpUBxTzKrSUJoG0Lf315ju6.svg)](https://asciinema.org/a/ouwpUBxTzKrSUJoG0Lf315ju6)
