@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 // import bubbleSort from './bubbleSort.js';
 const { program } = require('commander');
-const { bubbleSort } = require('./bubbleSort.js')
 const fs = require('fs');
 const path = require('path');
+const { bubbleSort } = require('./bubbleSort.js');
 
 program
   // .option('-v, --version', 'output the version number')
