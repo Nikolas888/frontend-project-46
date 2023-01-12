@@ -1,12 +1,7 @@
 #!/usr/bin/env node
-// import bubbleSort from './bubbleSort.js';
-// const { program } = require('commander');
 import { Command } from 'commander';
-// const fs = require('fs');
 import fs from 'fs';
-// const path = require('path');
 import path from 'path';
-// const { bubbleSort } = require('./bubbleSort.js');
 import bubbleSort from './bubbleSort.js';
 
 const program = new Command();
