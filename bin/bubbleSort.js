@@ -30,5 +30,5 @@ const bubbleSort = (x) => {
   return x;
 };
 
-module.exports = { bubbleSort };
-//   export default bubbleSort;
+// module.exports = { bubbleSort };
+  export default bubbleSort;
