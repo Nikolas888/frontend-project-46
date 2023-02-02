@@ -21,15 +21,15 @@ export default (filepath1, filepath2) => {
   let finish = '';
 
   // Сравниваем первый массив со вторым.
+  /* eslint-disable-next-line */
   for (const [keyfirst, valuefirst] of m1) {
+    /* eslint-disable-next-line */
     for (const [keysecond, valuesecond] of m2) {
       // Если ключ и значение совпадают.
       if (keyfirst === keysecond && valuefirst === valuesecond) {
         result.push(`  ${keyfirst}: ${valuefirst}`);
-      }
-
-      // Если ключ совпадает, а значение нет.
-      else if (keyfirst === keysecond && valuefirst !== valuesecond) {
+      } else if (keyfirst === keysecond && valuefirst !== valuesecond) {
+        // Если ключ совпадает, а значение нет.
         result.push(`- ${keyfirst}: ${valuefirst}`);
         result.push(`+ ${keyfirst}: ${valuesecond}`);
       }
@@ -43,6 +43,7 @@ export default (filepath1, filepath2) => {
 
   // Сравниваем второй массив с первым.
 
+  /* eslint-disable-next-line */
   for (const [keysecond, valuesecond] of m2) {
     // Если 1й массив не содержит ключ 2го массива
     if (!m1Keys.includes(keysecond)) {
@@ -54,6 +55,7 @@ export default (filepath1, filepath2) => {
   bubbleSort(result);
 
   // Преобразуем массив в строку
+  /* eslint-disable-next-line */
   for (const i of result) {
     finish = `${finish + i}\n`;
   }
