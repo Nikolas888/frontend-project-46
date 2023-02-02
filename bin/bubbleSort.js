@@ -1,6 +1,7 @@
 // Сортируем массив результата по 3му сиволу пузырьковой сортировкой
 const bubbleSort = (x) => {
-  let stepsCount = x.length - 1;
+  const res = x;
+  let stepsCount = res.length - 1;
   // Объявляем переменную swapped, значение которой показывает,
   // был ли совершен обмен элементов во время перебора массива
   let swapped;
@@ -12,11 +13,11 @@ const bubbleSort = (x) => {
     // Перебираем массив и меняем местами элементы, если предыдущий
     // больше, чем следующий
     for (let i = 0; i < stepsCount; i += 1) {
-      if (x[i][2] > x[i + 1][2]) {
+      if (res[i][2] > res[i + 1][2]) {
         // temp – временная константа для хранения текущего элемента
         const temp = x[i];
-        x[i] = x[i + 1];
-        x[i + 1] = temp;
+        res[i] = res[i + 1];
+        res[i + 1] = temp;
         // Если сработал if и была совершена перестановка,
         // присваиваем swapped значение true
         swapped = true;
@@ -27,7 +28,7 @@ const bubbleSort = (x) => {
     stepsCount -= 1;
   } while (swapped); // продолжаем, пока swapped === true
 
-  return x;
+  return res;
 };
 
 // module.exports = { bubbleSort };
