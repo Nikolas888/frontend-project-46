@@ -62,4 +62,5 @@ export default (filepath1, filepath2) => {
   finish = `{\n${finish}}`;
 
   console.log(finish);
+  return finish
 };
