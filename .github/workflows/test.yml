@@ -21,4 +21,4 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: make install
     - run: make lint
-    - run: NODE_OPTIONS=--experimental-vm-modules npx jest
+    - run: npx jest
