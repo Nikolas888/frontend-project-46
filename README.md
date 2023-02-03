@@ -3,3 +3,4 @@
 <a href="https://codeclimate.com/github/Nikolas888/frontend-project-46/maintainability"><img src="https://api.codeclimate.com/v1/badges/574dc842a5febde2471e/maintainability" /></a>
 ![example workflow](https://github.com/Nikolas888/frontend-project-46/actions/workflows/test.yml/badge.svg)
 [![asciicast](https://asciinema.org/a/8xQ13DTrzOJFPNVWWdQCaD8Tk.svg)](https://asciinema.org/a/8xQ13DTrzOJFPNVWWdQCaD8Tk)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/63999f2b752ba13688003c7f/test_coverage)](https://codeclimate.com/github/Nikolas888/frontend-project-46/test_coverage)
