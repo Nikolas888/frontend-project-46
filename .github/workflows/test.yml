@@ -1,4 +1,4 @@
-name: Brain Games App CI
+name: Gendiff
 
 on:
   - push
