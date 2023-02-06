@@ -22,6 +22,7 @@ jobs:
     - run: make install
     - run: make lint
     - run: make test
+    - run: make coverage
 
    # - name: Test & publish code coverage
    # Publish code coverage on Code Climate
