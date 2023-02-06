@@ -22,7 +22,6 @@ jobs:
     - run: make install
     - run: make lint
     - run: make test
-    - run: make test-coverage
 
     - name: Test & publish code coverage
    # Publish code coverage on Code Climate
@@ -31,4 +30,6 @@ jobs:
    # Add Code Climate secret key
       env:
         CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
-
+      with:
+        coverageCommand: make coverage
+      debug: true
