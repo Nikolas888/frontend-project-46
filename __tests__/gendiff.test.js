@@ -6,11 +6,12 @@ const __filename = (import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
-console.log('__filename')
+// console.log(__filename);
+// console.log(__dirname);
 
 
 /* eslint-disable-next-line */
-// test('gendiff', () => {
+test('gendiff', () => {
           // const a = {
           //     "host": "hexlet.io",
           //     "timeout": 50,
@@ -22,7 +23,7 @@ console.log('__filename')
           //     "verbose": true,
           //     "host": "hexlet.io"
           //   }
-  // const res = '{\n- follow: false\n  host: hexlet.io\n- proxy: 123.234.53.22\n- timeout: 50\n+ timeout: 20\n+ verbose: true\n}';
+  const res = '{\n- follow: false\n  host: hexlet.io\n- proxy: 123.234.53.22\n- timeout: 50\n+ timeout: 20\n+ verbose: true\n}';
   /* eslint-disable-next-line */
-  // expect(gendiff('__fixtures__/file01.json', '__fixtures__/file02.json')).toEqual(res);
-// });
+  expect(gendiff('__fixtures__/file01.json', '__fixtures__/file02.json')).toEqual(res);
+});
