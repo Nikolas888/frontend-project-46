@@ -4,17 +4,14 @@ import gendiff from '../src/gendiff.js';
 
 const __filename = (import.meta.url);
 const __dirname = path.dirname(__filename);
+console.log(__filename);
 
 const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
-console.log(__filename);
-console.log(__dirname);
-console.log(getFixturePath('434'));
 const readFile = (filename) => fs.readFileSync(getFixturePath(filename), 'utf-8');
 
 const expectedStylish = readFile('stylish.txt');
 const expectedPlain = readFile('plain.txt');
 const expectedJSON = readFile('json.txt');
-// console.log(expectedJSON);
 
 const extensions = ['yml', 'json'];
 
