@@ -6,12 +6,32 @@ const __filename = (import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
-// console.log(__filename);
-// console.log(__dirname);
+console.log(__filename);
+console.log(__dirname);
+console.log(getFixturePath('434'));
+const readFile = (filename) => fs.readFileSync(getFixturePath(filename), 'utf-8');
 
+const expectedStylish = readFile('stylish.txt');
+const expectedPlain = readFile('plain.txt');
+const expectedJSON = readFile('json.txt');
+// console.log(expectedJSON);
+
+const extensions = ['yml', 'json'];
+
+test.each([
+  extensions,
+])('main test', (extension) => {
+  const filepath1 = getFixturePath(`before.${extension}`);
+  const filepath2 = getFixturePath(`after.${extension}`);
+
+  expect(genDiff(filepath1, filepath2)).toBe(expectedStylish);
+  expect(genDiff(filepath1, filepath2, 'stylish')).toBe(expectedStylish);
+  expect(genDiff(filepath1, filepath2, 'plain')).toBe(expectedPlain);
+  expect(genDiff(filepath1, filepath2, 'json')).toBe(expectedJSON);
+});
 
 /* eslint-disable-next-line */
-test('gendiff', () => {
+// test('gendiff', () => {
           // const a = {
           //     "host": "hexlet.io",
           //     "timeout": 50,
@@ -23,7 +43,7 @@ test('gendiff', () => {
           //     "verbose": true,
           //     "host": "hexlet.io"
           //   }
-  const res = '{\n- follow: false\n  host: hexlet.io\n- proxy: 123.234.53.22\n- timeout: 50\n+ timeout: 20\n+ verbose: true\n}';
+  // const res = '{\n- follow: false\n  host: hexlet.io\n- proxy: 123.234.53.22\n- timeout: 50\n+ timeout: 20\n+ verbose: true\n}';
   /* eslint-disable-next-line */
-  expect(gendiff('__fixtures__/file01.json', '__fixtures__/file02.json')).toEqual(res);
-});
+  // expect(gendiff('__fixtures__/file01.json', '__fixtures__/file02.json')).toEqual(res);
+// });
