@@ -1,10 +1,10 @@
-import { readFileSync } from 'node:fs';
+import { fileURLToPath } from 'url';
 import path from 'path';
 import gendiff from '../src/gendiff.js';
 import fs from 'fs';
 
 
-const __filename = (import.meta.url);
+const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 console.log(__filename);
 console.log(__dirname);
