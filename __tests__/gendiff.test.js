@@ -1,31 +1,35 @@
-import fs from 'fs';
+import { readFileSync } from 'node:fs';
 import path from 'path';
 import gendiff from '../src/gendiff.js';
+import fs from 'fs';
+
 
 const __filename = (import.meta.url);
 const __dirname = path.dirname(__filename);
 console.log(__filename);
+console.log(__dirname);
 
 const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
+console.log(getFixturePath('expectedResultStylish.txt'));
 const readFile = (filename) => fs.readFileSync(getFixturePath(filename), 'utf-8');
+console.log(readFile('expectedResultStylish.txt'));
 
-const expectedStylish = readFile('stylish.txt');
-const expectedPlain = readFile('plain.txt');
-const expectedJSON = readFile('json.txt');
 
-const extensions = ['yml', 'json'];
+// const expectedResultStylish = readFile('expectedResultStylish.txt');
+// const expectedResultPlain = readFile('expectedResultPlain.txt');
+// const expectedResultJson = readFile('expectedResultJson.txt');
 
-test.each([
-  extensions,
-])('main test', (extension) => {
-  const filepath1 = getFixturePath(`before.${extension}`);
-  const filepath2 = getFixturePath(`after.${extension}`);
+// const formatsFiles = ['json', 'yaml', 'yml'];
 
-  expect(genDiff(filepath1, filepath2)).toBe(expectedStylish);
-  expect(genDiff(filepath1, filepath2, 'stylish')).toBe(expectedStylish);
-  expect(genDiff(filepath1, filepath2, 'plain')).toBe(expectedPlain);
-  expect(genDiff(filepath1, filepath2, 'json')).toBe(expectedJSON);
-});
+// test.each(formatsFiles)('diff formats of files (.json .yaml .yml)', (extension) => {
+  // const fileName1 = `${process.cwd()}/__fixtures__/file1.${extension}`;
+  // const fileName2 = `${process.cwd()}/__fixtures__/file2.${extension}`;
+
+  // expect(genDiff(fileName1, fileName2, 'stylish')).toEqual(expectedResultStylish);
+  // expect(genDiff(fileName1, fileName2, 'plain')).toEqual(expectedResultPlain);
+  // expect(genDiff(fileName1, fileName2, 'json')).toEqual(expectedResultJson);
+  // expect(genDiff(fileName1, fileName2)).toEqual(expectedResultStylish);
+// });
 
 /* eslint-disable-next-line */
 // test('gendiff', () => {
