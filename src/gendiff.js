@@ -1,7 +1,11 @@
 import fs from 'fs';
 import path from 'path';
 import bubbleSort from '../bin/bubbleSort.js';
-import parsers from './parse.js';
+// import parsers from './parse.js';
+
+// Получаем формат файла после точки
+const getFormat = (filepath) => path.extname(filepath).slice(1);
+console.log(getFormat('/home/nik/projects/frontend-project-46/src/gendiff.js'));
 
 export default (filepath1, filepath2) => {
   // Читаем первый файл и парсим его превращая в обьект
