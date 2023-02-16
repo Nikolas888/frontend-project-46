@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import bubbleSort from '../bin/bubbleSort.js';
+import parsers from './parse.js';
 
 export default (filepath1, filepath2) => {
   // Читаем первый файл и парсим его превращая в обьект
