@@ -23,10 +23,10 @@ test.each(formatsFiles)('diff formats of files (.json .yaml .yml)', (extension) 
   const fileName1 = `${process.cwd()}/__fixtures__/file1.${extension}`;
   const fileName2 = `${process.cwd()}/__fixtures__/file2.${extension}`;
 
-  // expect(gendiff(fileName1, fileName2, 'stylish')).toEqual(expectedResultStylish);
-  // expect(gendiff(fileName1, fileName2, 'plain')).toEqual(expectedResultPlain);
-  // expect(gendiff(fileName1, fileName2, 'json')).toEqual(expectedResultJson);
-  // expect(gendiff(fileName1, fileName2)).toEqual(expectedResultStylish);
+  expect(gendiff(fileName1, fileName2, 'stylish')).toEqual(expectedResultStylish);
+  expect(gendiff(fileName1, fileName2, 'plain')).toEqual(expectedResultPlain);
+  expect(gendiff(fileName1, fileName2, 'json')).toEqual(expectedResultJson);
+  expect(gendiff(fileName1, fileName2)).toEqual(expectedResultStylish);
   console.log('1' + fileName1);
   console.log('2' + fileName2);
 });
