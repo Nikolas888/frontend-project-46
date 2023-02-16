@@ -12,6 +12,10 @@ const getFixturePath = (filepath) => path.resolve(process.cwd(), filepath);
 console.log(getFixturePath('src/gendiff.js'));
 // console.log('/home/nik/projects/frontend-project-46/src/gendiff.js');
 
+// Читаем файл с абсолютным путем
+const readFile = (filepath) => fs.readFileSync(getFixturePath(filepath, 'utf-8'));
+console.log(readFile('bin/file1.json'));
+
 
 
 export default (filepath1, filepath2) => {
