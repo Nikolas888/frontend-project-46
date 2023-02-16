@@ -7,6 +7,13 @@ import bubbleSort from '../bin/bubbleSort.js';
 const getFormat = (filepath) => path.extname(filepath).slice(1);
 console.log(getFormat('/home/nik/projects/frontend-project-46/src/gendiff.js'));
 
+// Преобразуем относительный путь в абсолютный
+const getFixturePath = (filepath) => path.resolve(process.cwd(), filepath);
+console.log(getFixturePath('src/gendiff.js'));
+// console.log('/home/nik/projects/frontend-project-46/src/gendiff.js');
+
+
+
 export default (filepath1, filepath2) => {
   // Читаем первый файл и парсим его превращая в обьект
   const obj1 = JSON.parse(fs.readFileSync(path.resolve(filepath1)));
