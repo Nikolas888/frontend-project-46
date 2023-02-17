@@ -27,7 +27,11 @@ export default (filepath1, filepath2, formatName = 'stylish') => {
   const readFile2 = readFile(filepath2);
 
   // Читаем второй файл и парсим его превращая в обьект
-  const obj2 = JSON.parse(fs.readFileSync(path.resolve(filepath2)));
+  // const obj2 = JSON.parse(fs.readFileSync(path.resolve(filepath2)));
+
+  // Парсим файлы 
+  const file1 = parsers(readFile1, getFormat(filepath1));
+  const file2 = parsers(readFile2, getFormat(filepath2));
 
   // Получаем вложенный массив [ключ, значение] из обьектов
   const m1 = Object.entries(obj1);
