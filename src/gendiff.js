@@ -18,7 +18,7 @@ console.log(readFile('bin/file1.json'));
 
 
 
-export default (filepath1, filepath2) => {
+export default (filepath1, filepath2, formatName = 'stylish') => {
   // Читаем первый файл и парсим его превращая в обьект
   const obj1 = JSON.parse(fs.readFileSync(path.resolve(filepath1)));
 
