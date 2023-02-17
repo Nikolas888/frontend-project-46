@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Nikolas888/frontend-project-46#readme",
   "dependencies": {
+    "js-yaml": "^4.1.0",
     "commander": "^9.4.1"
   },
   "bin": {
