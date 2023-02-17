@@ -15,6 +15,8 @@ console.log(getFixturePath('src/gendiff.js'));
 // Читаем файл с абсолютным путем
 const readFile = (filepath) => fs.readFileSync(getFixturePath(filepath, 'utf-8'));
 console.log(readFile('bin/file1.json'));
+console.log(readFile('__fixtures__/file1.yml'));
+console.log('eeeee');
 
 
 
