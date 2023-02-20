@@ -1,8 +1,9 @@
 import fs from 'fs';
 import path from 'path';
 import parsers from './parse.js';
+import buildTree from './build_tree.js';
 import bubbleSort from '../bin/bubbleSort.js';
-import yaml from 'js-yaml';
+// import yaml from 'js-yaml';
 
 // Получаем формат файла после точки
 const getFormat = (filepath) => path.extname(filepath).slice(1);
@@ -39,8 +40,8 @@ export default (filepath1, filepath2, formatName = 'stylish') => {
   // Парсим файлы 
   const file1 = parsers(readFile1, getFormat(filepath1));
   const file2 = parsers(readFile2, getFormat(filepath2));
-  const file3 = parsers(readFile('__fixtures__/file1.yml'), 'yml');
-  console.log(file3);
+  // const file3 = parsers(readFile('__fixtures__/file1.yml'), 'yml');
+  // console.log(file1);
 
   // Получаем вложенный массив [ключ, значение] из обьектов
   const m1 = Object.entries(obj1);
