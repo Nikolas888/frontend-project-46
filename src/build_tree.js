@@ -45,11 +45,11 @@ const buildTree = (file1, file2) => {
     }
     // Если второй файл не содержит ключ
     if (!_.has(file2, key)) {
-        console.log({
-            name: key,
-            value: file1[key],
-            type: 'deleted',
-          });
+        // console.log({
+            // name: key,
+            // value: file1[key],
+            // type: 'deleted',
+        //   });
       return {
         name: key,
         value: file1[key],
