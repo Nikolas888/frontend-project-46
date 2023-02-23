@@ -14,6 +14,7 @@ const file2 = {
     "host": "hexlet.io",
     "gta": [11]
   };
+  
   console.log(file1);
   console.log(file2);
 
@@ -34,11 +35,6 @@ const buildTree = (file1, file2) => {
   const result = sortedKeys.map((key) => {
     // Если первый файл не содержит ключ
     if (!_.has(file1, key)) {
-        // console.log({
-        // name: key,
-        // value: file2[key],
-        // type: 'added',
-        // });
       return {
         name: key,
         value: file2[key],
@@ -47,11 +43,6 @@ const buildTree = (file1, file2) => {
     }
     // Если второй файл не содержит ключ
     if (!_.has(file2, key)) {
-        // console.log({
-            // name: key,
-            // value: file1[key],
-            // type: 'deleted',
-        //   });
       return {
         name: key,
         value: file1[key],
@@ -61,11 +52,6 @@ const buildTree = (file1, file2) => {
         // Если значение по ключу в первом и втором обьекте - обьект, 
         // То вызываем рекурсивно эту же функцию и передаем в нее значения - обьекты
     if (_.isObject(file1[key]) && _.isObject(file2[key])) {
-        // console.log({
-            // name: key,
-            // type: 'nested',
-            // children: buildTree(file1[key], file2[key]),
-        //   });
       return {
         name: key,
         type: 'nested',
@@ -74,12 +60,6 @@ const buildTree = (file1, file2) => {
     }
     // Если значения отличаются
     if (file1[key] !== file2[key]) {
-        // console.log({
-            // name: key,
-            // value1: file1[key],
-            // value2: file2[key],
-            // type: 'changed',
-        // });
       return {
         name: key,
         value1: file1[key],
@@ -88,11 +68,6 @@ const buildTree = (file1, file2) => {
       };
     }
         // Ключ и значение без изменений
-        // console.log({
-            // name: key,
-            // value: file1[key],
-            // type: 'unchanged',
-        // });
     return {
       name: key,
       value: file1[key],
