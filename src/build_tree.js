@@ -4,13 +4,15 @@ const file1 = {
     "host": "hexlet.io",
     "timeout": 50,
     "proxy": "123.234.53.22",
-    "follow": false
+    "follow": false,
+    "gt": [1]
   };
 
 const file2 = {
     "timeout": 20,
     "verbose": true,
-    "host": "hexlet.io"
+    "host": "hexlet.io",
+    "gt": [11]
   };
   console.log(file1);
   console.log(file2);
@@ -32,11 +34,11 @@ const buildTree = (file1, file2) => {
   const result = sortedKeys.map((key) => {
     // Если первый файл не содержит ключ
     if (!_.has(file1, key)) {
-        // console.log({
-        // name: key,
-        // value: file2[key],
-        // type: 'added',
-        // });
+        console.log({
+        name: key,
+        value: file2[key],
+        type: 'added',
+        });
       return {
         name: key,
         value: file2[key],
@@ -45,18 +47,24 @@ const buildTree = (file1, file2) => {
     }
     // Если второй файл не содержит ключ
     if (!_.has(file2, key)) {
-        // console.log({
-            // name: key,
-            // value: file1[key],
-            // type: 'deleted',
-        //   });
+        console.log({
+            name: key,
+            value: file1[key],
+            type: 'deleted',
+          });
       return {
         name: key,
         value: file1[key],
         type: 'deleted',
       };
     }
+        // Если значение в первом и втором обьекте - обьект
     if (_.isObject(file1[key]) && _.isObject(file2[key])) {
+        console.log({
+            name: key,
+            type: 'nested',
+            children: buildTree(file1[key], file2[key]),
+          });
       return {
         name: key,
         type: 'nested',
