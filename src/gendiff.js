@@ -2,7 +2,9 @@ import fs from 'fs';
 import path from 'path';
 import parsers from './parse.js';
 import buildTree from './build_tree.js';
-import bubbleSort from '../bin/bubbleSort.js';
+// import bubbleSort from '../bin/bubbleSort.js';
+import format from './formatters/index.js';
+
 // import yaml from 'js-yaml';
 
 // Получаем формат файла после точки
@@ -42,59 +44,64 @@ export default (filepath1, filepath2, formatName = 'stylish') => {
   const file2 = parsers(readFile2, getFormat(filepath2));
   // const file3 = parsers(readFile('__fixtures__/file1.yml'), 'yml');
   // console.log(file1);
+  const tree = buildTree(file1, file2);
+  console.log(tree);
+
+  console.log(format(tree, formatName));
+  return format(tree, formatName);
 
   // Получаем вложенный массив [ключ, значение] из обьектов
-  const m1 = Object.entries(obj1);
-  const m2 = Object.entries(obj2);
+  // const m1 = Object.entries(obj1);
+  // const m2 = Object.entries(obj2);
 
   // Получаем  массив ключей из обьектов
-  const m1Keys = Object.keys(obj1);
-  const m2Keys = Object.keys(obj2);
+  // const m1Keys = Object.keys(obj1);
+  // const m2Keys = Object.keys(obj2);
 
-  const result = [];
-  let finish = '';
+  // const result = [];
+  // let finish = '';
 
   // Сравниваем первый массив со вторым.
   /* eslint-disable-next-line */
-  for (const [keyfirst, valuefirst] of m1) {
+  // for (const [keyfirst, valuefirst] of m1) {
     /* eslint-disable-next-line */
-    for (const [keysecond, valuesecond] of m2) {
+    // for (const [keysecond, valuesecond] of m2) {
       // Если ключ и значение совпадают.
-      if (keyfirst === keysecond && valuefirst === valuesecond) {
-        result.push(`  ${keyfirst}: ${valuefirst}`);
-      } else if (keyfirst === keysecond && valuefirst !== valuesecond) {
+      // if (keyfirst === keysecond && valuefirst === valuesecond) {
+        // result.push(`  ${keyfirst}: ${valuefirst}`);
+      // } else if (keyfirst === keysecond && valuefirst !== valuesecond) {
         // Если ключ совпадает, а значение нет.
-        result.push(`- ${keyfirst}: ${valuefirst}`);
-        result.push(`+ ${keyfirst}: ${valuesecond}`);
-      }
-    }
+        // result.push(`- ${keyfirst}: ${valuefirst}`);
+        // result.push(`+ ${keyfirst}: ${valuesecond}`);
+      // }
+    // }
 
     // Если 2й массив не содержит ключ 1го массива
-    if (!m2Keys.includes(keyfirst)) {
-      result.push(`- ${keyfirst}: ${valuefirst}`);
-    }
-  }
+    // if (!m2Keys.includes(keyfirst)) {
+      // result.push(`- ${keyfirst}: ${valuefirst}`);
+    // }
+  // }
 
   // Сравниваем второй массив с первым.
 
   /* eslint-disable-next-line */
-  for (const [keysecond, valuesecond] of m2) {
+  // for (const [keysecond, valuesecond] of m2) {
     // Если 1й массив не содержит ключ 2го массива
-    if (!m1Keys.includes(keysecond)) {
-      result.push(`+ ${keysecond}: ${valuesecond}`);
-    }
-  }
+    // if (!m1Keys.includes(keysecond)) {
+      // result.push(`+ ${keysecond}: ${valuesecond}`);
+    // }
+  // }
 
   // Запускаем пузырьковую сортировку по 3му сиволу и изменяем исходный массив
-  bubbleSort(result);
+  // bubbleSort(result);
 
   // Преобразуем массив в строку
   /* eslint-disable-next-line */
-  for (const i of result) {
-    finish = `${finish + i}\n`;
-  }
-  finish = `{\n${finish}}`;
+  // for (const i of result) {
+    // finish = `${finish + i}\n`;
+  // }
+  // finish = `{\n${finish}}`;
 
-  console.log(finish);
-  return finish;
+  // console.log(finish);
+  // return finish;
 };
