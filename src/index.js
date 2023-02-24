@@ -43,7 +43,7 @@ export default (filepath1, filepath2, formatName) => {
   const file1 = parsers(readFile1, getFormat(filepath1));
   const file2 = parsers(readFile2, getFormat(filepath2));
 
-  // Получаем обьединенный обьект с типами ключей
+  // Получаем обьединенный отсортированный обьект с типами ключей
   const tree = buildTree(file1, file2);
   console.log(tree);
 
