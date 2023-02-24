@@ -10,7 +10,7 @@ program
   .argument('<filepath1>', 'path to first file.json')
   .argument('<filepath2>', 'path to second file.json')
   .action((filepath1, filepath2, options) => {
-    gendiff(filepath1, filepath2, options.format);
+    console.log(gendiff(filepath1, filepath2, options.format));
   });
 
 program.parse();
