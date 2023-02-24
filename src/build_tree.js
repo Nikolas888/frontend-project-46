@@ -1,35 +1,14 @@
 import _ from 'lodash';
 
-// const file1 = {
-//     "host": "hexlet.io",
-//     "timeout": 50,
-//     "proxy": "123.234.53.22",
-//     "follow": false,
-//     "gta": [1]
-//   };
-
-// const file2 = {
-//     "timeout": 20,
-//     "verbose": true,
-//     "host": "hexlet.io",
-//     "gta": [11]
-//   };
-
-//   console.log(file1);
-//   console.log(file2);
-
 // Получаем массивы ключей обоих файлов
 const buildTree = (file1, file2) => {
   const keys1 = _.keys(file1);
   const keys2 = _.keys(file2);
 
-//   console.log(keys1);
-//   console.log(keys2);
-
 // Обьединяем 2 массива ключей в 1 и сортируем его
   const sortedKeys = _.sortBy(_.union(keys1, keys2));
 
-//   console.log(sortedKeys);
+  console.log(sortedKeys);
 
     // Применяем функцию map к каждому элементу массива
   const result = sortedKeys.map((key) => {

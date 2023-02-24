@@ -9,24 +9,12 @@ import format from './formatters/index.js';
 
 // Получаем формат файла после точки
 const getFormat = (filepath) => path.extname(filepath).slice(1);
-console.log(getFormat('/home/nik/projects/frontend-project-46/src/gendiff.js'));
 
 // Преобразуем относительный путь в абсолютный
 const getFixturePath = (filepath) => path.resolve(process.cwd(), filepath);
-console.log(getFixturePath('src/gendiff.js'));
-// console.log('/home/nik/projects/frontend-project-46/src/gendiff.js');
-console.log(getFixturePath('__fixtures__/file1.yml'));
 
 // Читаем файл с абсолютным путем
 const readFile = (filepath) => fs.readFileSync(getFixturePath(filepath, 'utf-8'));
-// console.log(readFile('bin/file1.json'));
-// console.log(readFile('__fixtures__/file1.yml'));
-// console.log('eeeeeeeeee');
-// console.log(parsers('/home/nik/projects/frontend-project-46/__fixtures__/file1.yml', 'yml'));
-// const readFile12 = readFile('__fixtures__/file1.yml');
-// console.log(yaml.load(readFile12));
-
-
 
 export default (filepath1, filepath2, formatName) => {
   // Читаем первый файл и парсим его превращая в обьект
