@@ -1,6 +1,9 @@
 import _ from 'lodash';
 
+// console.log(_.isObject(()=>''));
+
 const stringify = (value) => {
+  // проверяем, является ли обьектом
   if (_.isObject(value)) {
     return '[complex value]';
   }

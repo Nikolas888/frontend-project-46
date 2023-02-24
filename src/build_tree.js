@@ -7,6 +7,7 @@ const buildTree = (file1, file2) => {
 
 // Обьединяем 2 массива ключей в 1 и сортируем его
   const sortedKeys = _.sortBy(_.union(keys1, keys2));
+  // console.log(sortedKeys);
 
     // Применяем функцию map к каждому элементу массива
   const result = sortedKeys.map((key) => {
