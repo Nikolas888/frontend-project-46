@@ -77,6 +77,4 @@ const buildTree = (file1, file2) => {
   return result;
 };
 
-// console.log(buildTree(file1, file2));
-
 export default buildTree;
