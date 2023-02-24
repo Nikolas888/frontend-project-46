@@ -16,7 +16,9 @@ const plain = (tree) => {
       .filter(({ type }) => type !== 'unchanged')
       .map((item) => {
         const keys = [...path, item.name];
+        console.log(keys);
         const property = keys.join('.');
+        console.log(property);
 
         switch (item.type) {
           case 'added':
