@@ -28,7 +28,7 @@ const readFile = (filepath) => fs.readFileSync(getFixturePath(filepath, 'utf-8')
 
 
 
-export default (filepath1, filepath2, formatName = 'stylish') => {
+export default (filepath1, filepath2, formatName) => {
   // Читаем первый файл и парсим его превращая в обьект
   // const obj1 = JSON.parse(fs.readFileSync(path.resolve(filepath1)));
 
@@ -47,6 +47,7 @@ export default (filepath1, filepath2, formatName = 'stylish') => {
   const tree = buildTree(file1, file2);
   console.log(tree);
 
+  console.log(formatName);
   console.log(format(tree, formatName));
   return format(tree, formatName);
 
