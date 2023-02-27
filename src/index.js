@@ -2,10 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import parsers from './parse.js';
 import buildTree from './build_tree.js';
-// import bubbleSort from '../bin/bubbleSort.js';
 import format from './formatters/index.js';
-
-// import yaml from 'js-yaml';
 
 // Получаем формат файла после точки
 const getFormat = (filepath) => path.extname(filepath).slice(1);
