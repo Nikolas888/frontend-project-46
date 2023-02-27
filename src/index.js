@@ -35,5 +35,6 @@ export default (filepath1, filepath2, formatName) => {
   const tree = buildTree(file1, file2);
   console.log(tree);
 
+  // Получаем вывод в зависимости от формата. По умолчанию stylish
   return format(tree, formatName);
 };
