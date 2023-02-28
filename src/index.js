@@ -30,7 +30,7 @@ export default (filepath1, filepath2, formatName) => {
 
   // Получаем обьединенный отсортированный обьект с типами ключей
   const tree = buildTree(file1, file2);
-  console.log(tree);
+  // console.log(tree);
 
   // Получаем вывод в зависимости от формата. По умолчанию formatName = stylish
   return format(tree, formatName);
