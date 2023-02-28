@@ -30,9 +30,12 @@ const stringify = (val, depth) => {
   return ['{', ...lines, `${indents.closeBracket}}`].join('\n');
 };
 
+// передаем дерево и счетчик = 1
 const stylish = (tree, depth = 1) => {
   const indents = createIndent(depth);
 
+  // Применяем мапинг к обьекту-дереву и формируем вывод в зависимости от типа ключа + - ...
+  // С каждым проходом увеличиваем счетчик на 1
   const items = tree.map((item) => {
     const makeValue = stringify(item.value, depth + 1);
 
