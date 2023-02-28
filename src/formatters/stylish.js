@@ -30,7 +30,7 @@ const stringify = (val, depth) => {
   return ['{', ...lines, `${indents.closeBracket}}`].join('\n');
 };
 
-// передаем дерево и счетчик = 1
+// передаем дерево и счетчик по умолчанию равен 1
 const stylish = (tree, depth = 1) => {
   const indents = createIndent(depth);
 
