@@ -5,8 +5,8 @@ import gendiff from '../src/index.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-// console.log(__filename);
-// console.log(__dirname);
+console.log(__filename);
+console.log(__dirname);
 
 const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
 // console.log(getFixturePath('expectedResultStylish.txt'));
@@ -29,4 +29,3 @@ test.each(formatsFiles)('diff formats of files (.json .yaml .yml)', (extension) 
   console.log(`1${fileName1}`);
   console.log(`2${fileName2}`);
 });
-
