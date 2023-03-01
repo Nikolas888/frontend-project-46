@@ -1,15 +1,15 @@
+import { test, expect } from '@jest/globals';
 import { fileURLToPath } from 'url';
 import path from 'path';
 import fs from 'fs';
 import gendiff from '../src/index.js';
 
+/* eslint-disable-next-line */
 const __filename = fileURLToPath(import.meta.url);
+/* eslint-disable-next-line */
 const __dirname = path.dirname(__filename);
-console.log(__filename);
-console.log(__dirname);
 
 const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
-// console.log(getFixturePath('expectedResultStylish.txt'));
 const readFile = (filename) => fs.readFileSync(getFixturePath(filename), 'utf-8');
 
 const expectedResultStylish = readFile('expectedResultStylish.txt');
