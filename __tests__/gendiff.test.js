@@ -1,8 +1,7 @@
 import { fileURLToPath } from 'url';
 import path from 'path';
-import gendiff from '../src/gendiff.js';
 import fs from 'fs';
-
+import gendiff from '../src/index.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -27,24 +26,7 @@ test.each(formatsFiles)('diff formats of files (.json .yaml .yml)', (extension) 
   expect(gendiff(fileName1, fileName2, 'plain')).toEqual(expectedResultPlain);
   expect(gendiff(fileName1, fileName2, 'json')).toEqual(expectedResultJson);
   expect(gendiff(fileName1, fileName2)).toEqual(expectedResultStylish);
-  console.log('1' + fileName1);
-  console.log('2' + fileName2);
+  console.log(`1${fileName1}`);
+  console.log(`2${fileName2}`);
 });
 
-/* eslint-disable-next-line */
-// test('gendiff', () => {
-// const a = {
-//     "host": "hexlet.io",
-//     "timeout": 50,
-//     "proxy": "123.234.53.22",
-//     "follow": false
-//   };
-//   const b = {
-//     "timeout": 20,
-//     "verbose": true,
-//     "host": "hexlet.io"
-//   }
-// const res = '{\n- follow: false\n  host: hexlet.io\n- proxy: 123.234.53.22\n- timeout: 50\n+ timeout: 20\n+ verbose: true\n}';
-/* eslint-disable-next-line */
-  // expect(gendiff('/home/nik/projects/frontend-project-46/__fixtures__/file01.json', '/home/nik/projects/frontend-project-46/__fixtures__/file02.json')).toEqual(res);
-// });

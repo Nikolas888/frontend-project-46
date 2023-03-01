@@ -17,14 +17,14 @@ export default (filepath1, filepath2, formatName) => {
   // Читаем первый файл и парсим его превращая в обьект
   // const obj1 = JSON.parse(fs.readFileSync(path.resolve(filepath1)));
 
-  // Читаем файлы 
+  // Читаем файлы
   const readFile1 = readFile(filepath1);
   const readFile2 = readFile(filepath2);
 
   // Читаем второй файл и парсим его превращая в обьект
   // const obj2 = JSON.parse(fs.readFileSync(path.resolve(filepath2)));
 
-  // Парсим файлы 
+  // Парсим файлы
   const file1 = parsers(readFile1, getFormat(filepath1));
   const file2 = parsers(readFile2, getFormat(filepath2));
 
