@@ -34,13 +34,11 @@ const stringify = (val, depth) => {
 // передаем дерево и счетчик по умолчанию равен 1
 const stylish = (tree, depth = 1) => {
   const indents = createIndent(depth);
-  console.log(indents);
 
   // Применяем мапинг к обьекту-дереву и формируем вывод в зависимости от типа ключа + - ...
   // С каждым проходом увеличиваем счетчик на 1
   const items = tree.map((item) => {
     const makeValue = stringify(item.value, depth + 1);
-
     switch (item.type) {
       case 'added':
         return `${indents.openBracket}+ ${item.name}: ${makeValue}`;
