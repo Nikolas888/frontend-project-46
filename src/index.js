@@ -13,7 +13,7 @@ const getFixturePath = (filepath) => path.resolve(process.cwd(), filepath);
 // Читаем файл с абсолютным путем
 const readFile = (filepath) => fs.readFileSync(getFixturePath(filepath, 'utf-8'));
 
-export default (filepath1, filepath2, formatName) => {
+export default (filepath1, filepath2, formatName = 'stylish') => {
   // Читаем первый файл и парсим его превращая в обьект
   // const obj1 = JSON.parse(fs.readFileSync(path.resolve(filepath1)));
 
