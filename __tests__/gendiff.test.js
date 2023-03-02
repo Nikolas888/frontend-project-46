@@ -25,9 +25,7 @@ test.each(formatsFiles)('diff formats of files (.json .yaml .yml)', (extension) 
   expect(gendiff(fileName1, fileName2, 'stylish')).toEqual(expectedResultStylish);
   expect(gendiff(fileName1, fileName2, 'plain')).toEqual(expectedResultPlain);
   expect(gendiff(fileName1, fileName2, 'json')).toEqual(expectedResultJson);
-  // console.log(fileName1);
-  // console.log(fileName2);
   expect(gendiff(fileName1, fileName2)).toEqual(expectedResultStylish);
-  console.log(`1${fileName1}`);
-  console.log(`2${fileName2}`);
+  // console.log(`1${fileName1}`);
+  // console.log(`2${fileName2}`);
 });
